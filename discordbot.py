@@ -17,13 +17,4 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
-@client.event
-async def on_message(message):
-    if client.user != message.author:
-        #おはよう
-        if message.content.startswith("おはよう"):
-            m = "おはようございます" + message.author.name + "さん！"
-            await message.channel.send(m)
-
-
 bot.run(token)

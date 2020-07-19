@@ -16,11 +16,14 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-#おはよう
-aync def おはよう(ctx):
+
+@client.event
+async def on_message(message):
     if client.user != message.author:
-        m = "おはようございます" + message.author.name + "さん！"
-        await message.channel.send(m)
+        #おはよう
+        if message.content.startswith("おはよう"):
+            m = "おはようございます" + message.author.name + "さん！"
+            await message.channel.send(m)
 
 
 bot.run(token)
